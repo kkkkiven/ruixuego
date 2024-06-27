@@ -1,4 +1,4 @@
-module github.com/kkkkiven/ruixuego.git
+module github.com/kkkkiven/ruixuego
 
 go 1.17
 

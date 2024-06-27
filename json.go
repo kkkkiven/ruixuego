@@ -3,9 +3,8 @@
 package ruixuego
 
 import (
-	"git.yuetanggame.com/zfish-go/ruixuego/bufferpool"
-
 	jsoniter "github.com/json-iterator/go"
+	"github.com/kkkkiven/ruixuego/bufferpool"
 )
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary

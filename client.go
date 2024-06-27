@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"git.yuetanggame.com/zfish-go/ruixuego/httpclient"
+	"github.com/kkkkiven/ruixuego/httpclient"
 
 	"github.com/google/uuid"
 	"github.com/valyala/fasthttp"
@@ -424,7 +424,8 @@ func (c *Client) IsFriend(openID, targetOpenID string) (bool, error) {
 }
 
 // LBSUpdate 更新 WGS84 坐标
-// 		types 为 CP	自定义坐标分组, 比如可以同时将用户加入到 all 和 female 两个列表中
+//
+//	types 为 CP	自定义坐标分组, 比如可以同时将用户加入到 all 和 female 两个列表中
 func (c *Client) LBSUpdate(openID string, types []string, lon, lat float64) error {
 	if openID == "" {
 		return ErrInvalidOpenID
