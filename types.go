@@ -43,19 +43,19 @@ type argLocation struct {
 	PageSize  int      `json:"page_size,omitempty"`
 }
 
-type RelationUser struct {
-	OpenID   string  `json:"OpenID,omitempty"`
-	NickName string  `json:"NickName,omitempty"`
-	Birthday string  `json:"Birthday,omitempty"`
-	Remarks  string  `json:"Remarks,omitempty"`
-	Avatar   string  `json:"Avatar,omitempty"`
-	Custom   string  `json:"Custom,omitempty"`
-	Dist     float64 `json:"Dist,omitempty"`
-	Time     int64   `json:"Time,omitempty"`
-	Score    int64   `json:"Score,omitempty"`
-	CPID     uint32  `json:"CPID,omitempty"`
-	Sex      int32   `json:"Sex,omitempty"`
-}
+//type RelationUser struct {
+//	OpenID   string  `json:"OpenID,omitempty"`
+//	NickName string  `json:"NickName,omitempty"`
+//	Birthday string  `json:"Birthday,omitempty"`
+//	Remarks  string  `json:"Remarks,omitempty"`
+//	Avatar   string  `json:"Avatar,omitempty"`
+//	Custom   string  `json:"Custom,omitempty"`
+//	Dist     float64 `json:"Dist,omitempty"`
+//	Time     int64   `json:"Time,omitempty"`
+//	Score    int64   `json:"Score,omitempty"`
+//	CPID     uint32  `json:"CPID,omitempty"`
+//	Sex      int32   `json:"Sex,omitempty"`
+//}
 
 type UserInfo struct {
 	AppID    string `json:"appid,omitempty"`
@@ -65,4 +65,34 @@ type UserInfo struct {
 	Region   string `json:"region,omitempty"`   // Format: 220101
 	Birthday string `json:"birthday,omitempty"` // Format: 2006-01-02
 	Sex      string `json:"sex,omitempty"`      // 0: female, 1: male
+}
+
+type rankAPIArg struct {
+	RankID      string `json:"rank_id"`
+	Score       int64  `json:"score,omitempty"`
+	OpenID      string `json:"open_id,omitempty"`
+	StartTime   string `json:"start,omitempty"`
+	DestroyTime string `json:"destroy,omitempty"`
+}
+
+type RelationUser struct {
+	OpenID   string  `json:"openid,omitempty"`
+	NickName string  `json:"nickname,omitempty"`
+	Birthday string  `json:"birthday,omitempty"`
+	Remarks  string  `json:"remarks,omitempty"`
+	Avatar   string  `json:"avatar,omitempty"`
+	Custom   string  `json:"custom,omitempty"`
+	Dist     float64 `json:"dist,omitempty"`
+	Time     int64   `json:"time,omitempty"`
+	Score    int64   `json:"score,omitempty"`
+	CPID     uint32  `json:"cpid,omitempty"`
+	Sex      int32   `json:"sex,omitempty"`
+}
+
+// RankMember 玩家排行对象
+type RankMember struct {
+	UserName string        `json:"-"`
+	Score    int64         `json:"score"`
+	Rank     int64         `json:"rank"` // 玩家排名
+	UserInfo *RelationUser `json:"user,omitempty"`
 }

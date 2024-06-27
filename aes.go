@@ -10,8 +10,9 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"fmt"
-	"github.com/kkkkiven/ruixuego/bytepool"
 	"io"
+
+	"github.com/kkkkiven/ruixuego/bytepool"
 )
 
 var (
